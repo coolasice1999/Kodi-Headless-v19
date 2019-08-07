@@ -26,6 +26,7 @@ RUN \
 	binutils \
 	cmake \
 	curl \
+        cron \
 	default-jre \
 	g++ \
 	gawk \
@@ -159,7 +160,8 @@ RUN \
  apt-get update && \
  apt-get install -y \
 	--no-install-recommends \
-	libass9 \
+	cron \
+        libass9 \
 	libbluray2 \
 	libegl1 \
 	libfstrcmp0 \
@@ -187,7 +189,7 @@ RUN \
 # copy local files and artifacts of build stages.
 COPY root/ /
 COPY --from=buildstage /tmp/kodi-build/usr/ /usr/
-
+RUN apt-get update && apt-get install cron
 # ports and volumes
 VOLUME /config/.kodi
 EXPOSE 8080 9090 9777/udp
