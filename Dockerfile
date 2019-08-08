@@ -190,6 +190,14 @@ RUN \
 COPY root/ /
 COPY --from=buildstage /tmp/kodi-build/usr/ /usr/
 RUN apt-get update && apt-get install cron
+COPY ./entrypoint.sh /mnt/entrypoint.sh
+RUN chmod +x /mnt/entrypoint.sh
+
+
+ENTRYPOINT ["/mnt/entrypoint.sh"]
+CMD ["/usr/sbin/crond", "-f", "-d", "0"]
+
+
 # ports and volumes
 VOLUME /config/.kodi
 EXPOSE 8080 9090 9777/udp
