@@ -2,7 +2,7 @@
 
 if [ ! -f /mnt/cron.conf ]; then
 #run video clean and update daily
-    echo "0 1 * * * /usr/bin/kodi-send -a "UpdateLibrary(video)"> /mnt/cron.conf
+    echo "0 1 * * * /usr/bin/kodi-send -a "UpdateLibrary(video)" > /mnt/cron.conf
     echo "30 1 * * * /usr/bin/kodi-send -a "CleanLibrary(video)" > /mnt/cron.conf
 fi
 chmod 777 /config/*
