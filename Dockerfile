@@ -195,7 +195,7 @@ RUN chmod +x /mnt/entrypoint.sh
 
 
 ENTRYPOINT ["/mnt/entrypoint.sh"]
-CMD ["/usr/sbin/crond", "-f", "-d", "0"]
+CMD ["/usr/sbin/cron", "-f", "-l", "1"]
 
 
 # ports and volumes
