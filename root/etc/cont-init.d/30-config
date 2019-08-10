@@ -8,6 +8,13 @@ mkdir -p \
 # copy config
 [[ ! -e /config/.kodi/userdata/advancedsettings.xml ]] && \
 	cp /defaults/advancedsettings.xml /config/.kodi/userdata/advancedsettings.xml
+	
+	
+#make cron job for auto updates
+[[ ! -e /mnt/con.conf ]] && \
+	cp /config/.kodi/cron.conf /mnt/cron.conf
+chmod 600 /mnt/cron.conf
+crontab /mnt/cron.conf
 
 # permissions
 chown -R abc:abc \
