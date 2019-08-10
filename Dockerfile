@@ -189,14 +189,6 @@ RUN \
 # copy local files and artifacts of build stages.
 COPY root/ /
 COPY --from=buildstage /tmp/kodi-build/usr/ /usr/
-RUN apt-get update && apt-get install cron
-COPY ./entrypoint.sh /mnt/entrypoint.sh
-RUN chmod +x /mnt/entrypoint.sh
-
-
-ENTRYPOINT ["/mnt/entrypoint.sh"]
-CMD ["/usr/sbin/cron", "-f", "-l", "1"]
-
 
 # ports and volumes
 VOLUME /config/.kodi
