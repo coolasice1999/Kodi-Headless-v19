@@ -13,7 +13,11 @@ mkdir -p \
 #make cron job for auto updates
 [[ ! -e /mnt/con.conf ]] && \
 	cp /config/.kodi/cron.conf /mnt/cron.conf
+	cp /config/update.sh /mnt/update.sh
+	cp /config/clean.sh /mnt/clean.sh
 chmod 600 /mnt/cron.conf
+chmod +x /mnt/clean.sh
+chmod +x /mnt/update.sh
 crontab /mnt/cron.conf
 
 # permissions
