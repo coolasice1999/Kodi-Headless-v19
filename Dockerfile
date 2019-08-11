@@ -67,6 +67,7 @@ RUN \
 	libxslt-dev \
 	make \
 	nasm \
+	python \
 	python-dev \
 	rapidjson-dev \
 	swig \
@@ -161,6 +162,7 @@ RUN \
  apt-get install -y \
 	--no-install-recommends \
 	cron \
+	python \
         libass9 \
 	libbluray2 \
 	libegl1 \
