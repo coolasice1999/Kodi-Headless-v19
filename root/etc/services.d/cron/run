@@ -4,4 +4,6 @@ $ cat services.d/cron/run
 # this line here is what we should have to get rid of the hard link error
 #touch /etc/crontab /etc/cron.*/*
 
-/usr/sbin/cron -f
+
+        s6-setuidgid abc \
+	/usr/sbin/Cron -f
