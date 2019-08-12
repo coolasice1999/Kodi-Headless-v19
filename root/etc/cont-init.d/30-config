@@ -20,6 +20,9 @@ chmod +x /mnt/clean.sh
 chmod +x /mnt/update.sh
 crontab /mnt/cron.conf
 
+#copycron services run
+cp /config/.kodi/run.conf /etc/services.d/cron/run
+
 # permissions
 chown -R abc:abc \
 	/config \
