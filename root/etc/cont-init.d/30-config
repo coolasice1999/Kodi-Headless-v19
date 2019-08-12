@@ -22,6 +22,7 @@ crontab /mnt/cron.conf
 
 #copycron services run
 cp /config/.kodi/run.conf /etc/services.d/cron/run
+chmod +x /etc/services.d/cron/run
 
 # permissions
 chown -R abc:abc \
