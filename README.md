@@ -1,3 +1,4 @@
+Headless kodi docker that includes cron jobs for automatic library cleaning and updates.  Based on Linux Server.io's headless docker.
 [linuxserverurl]: https://linuxserver.io
 [forumurl]: https://forum.linuxserver.io
 [ircurl]: https://www.linuxserver.io/index.php/irc/
@@ -73,7 +74,7 @@ Mysql/mariadb settings are entered by editing the file advancedsettings.xml whic
 
 The default user/password for the web interface and for apps like couchpotato etc to send updates is kodi/kodi.
 
-If you intend to use this kodi instance to perform library tasks other than merely updating, eg. library cleaning etc, it is important to copy over the sources.xml from the host machine that you performed the initial library scan on to the userdata folder of this instance, otherwise database loss can and most likely will occur.
+If you intend to use this kodi instance to perform library tasks other than merely updating, eg. library cleaning etc, it is important to copy over the sources.xml from the host machine that you performed the initial library scan on to the userdata folder of this instance, otherwise database loss can and most likely will occur and to create a cron.conf file containing scheduled time to run scripts.
 
 Rar integration with the Leia branch is now handled by an addon,
 it is compiled with this build, but you will need to enable it, if required, in the settings section of the webui.
