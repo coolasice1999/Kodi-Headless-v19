@@ -83,7 +83,7 @@ RUN \
 	/tmp/kodi-source/build && \
  curl -o \
  /tmp/kodi.tar.gz -L \
-	"https://github.com/xbmc/xbmc/archive/${KODI_VER}-${KODI_NAME}.tar.gz" && \
+	"https://codeload.github.com/xbmc/xbmc/legacy.tar.gz/19.3-Matrix" && \
  tar xf /tmp/kodi.tar.gz -C \
 	/tmp/kodi-source --strip-components=1 && \
  cd /tmp/kodi-source && \
