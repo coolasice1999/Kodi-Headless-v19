@@ -1,4 +1,4 @@
-# matthuisman/kodi-headless
+# Cloned from matthuisman/kodi-headless
 A headless install of kodi in a docker container.
 Commonly used with MySQL Kodi setup to allow library updates via web interface.
 
