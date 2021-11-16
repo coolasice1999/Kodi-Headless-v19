@@ -26,6 +26,7 @@ RUN \
 	binutils \
 	cmake \
 	curl \
+	cron \
 	default-jre \
 	g++ \
 	gawk \
