@@ -163,6 +163,7 @@ RUN \
  apt-get install -y \
 	--no-install-recommends \
 	samba-common-bin \
+	cron \
 	libass9 \
 	libegl1 \
 	libfstrcmp0 \
