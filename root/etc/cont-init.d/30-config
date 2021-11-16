@@ -24,6 +24,20 @@ fi
 if [ -n "$MYSQL_PASSWORD" ]; then
 	sed -i -E "s/<pass>.*?<\/pass>/<pass>$MYSQL_PASSWORD<\/pass>/g" /config/.kodi/userdata/advancedsettings.xml
 fi
+#make cron job for auto updates
+[[ ! -e /mnt/con.conf ]] && \
+	cp /config/.kodi/cron.conf /mnt/cron.conf
+	cp /config/.kodi/update.sh /mnt/update.sh
+	cp /config/.kodi/clean.sh /mnt/clean.sh
+chmod 600 /mnt/cron.conf
+chmod +x /mnt/clean.sh
+chmod +x /mnt/update.sh
+crontab /mnt/cron.conf
+
+#copycron services run
+mkdir /etc/services.d/cron
+cp /config/.kodi/run.conf /etc/services.d/cron/run
+chmod +x /etc/services.d/cron/run
 
 # permissions
 chown -R abc:abc \
