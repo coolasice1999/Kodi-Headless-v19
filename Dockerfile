@@ -164,7 +164,7 @@ RUN \
 	--no-install-recommends \
 	samba-common-bin \
 	cron \
-	python \
+	python3 \
 	libass9 \
 	libegl1 \
 	libfstrcmp0 \
